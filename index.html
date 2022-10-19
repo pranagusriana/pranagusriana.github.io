@@ -4,9 +4,107 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>Prana Gusriana</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <header>
+        <div class="jumbotron">
+            <h1>Hi! I'm Prana Gusriana.</h1>
+            <p>A Final Year Student in Computer Science at Bandung Institute of Technology</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#aboutme">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content">
+            <article id="aboutme" class="card">
+                <h2>About Me</h2>
+                <img src="./assets/image/stud.jpg" class="featured-image">
+                <p>Hi! my name is Prana Gusriana, currently I am a final year student majoring in Computer Science at Bandung Institute of Technology who is eager to learn anything especially in the fields of data analysis, data science, artificial intelligence, machine learning, and software engineering. Proficient in using the Python programming language to perform data analysis, data visualization, create machine learning models, and other tasks. I am so excited when I can engage and successfully solve challenging real world problems using all my knowledge and learn a lot from them.</p>
+                
+                <h2>Hobbies and Interest</h2>
+
+                <h3>Photography</h3>
+                <div class="photo-quotes">
+                    <img src="./assets/image/photography.jpg" class="featured-image">
+                    <div class="quotes-container">
+                        <blockquote>  
+                            <p>We keep this love in a <strong>photograph</strong>
+                                We made <strong>these memories</strong> for ourselves</p>
+                            <cite>Photograph - Ed Sheeran</cite>
+                        </blockquote>
+                    </div>
+                </div>
+                <p>I am interested in photography because I can capture the present moment so that I can remember and feel that moment again in the future.</p>
+
+                <h3>Reading Books</h3>
+                <img src="./assets/image/read-books.png" class="featured-image">
+                <p>By reading books I can get a lot of new insights. I can also broaden my perspective on the world. And reading books can also change how I see the world. I usually read both fiction and non-fiction books</p>
+            </article>
+            
+            <article id="projects" class="card">
+                <h2>Projects</h2>
+                <p>Here are some projects I've done.</p> 
+                
+                <section>
+                    <div class="flex-container-column" id="project-list">
+                    </div>
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">                    
+                    </div>
+                </section>
+
+            </article>
+
+            <article id="contact" class="card">
+                <h2>Contact</h2>
+                <p><a href="mailto:pranagusriana@gmail.com"><i class="fa fa-envelope"></i> pranagusriana@gmail.com</a></p>
+                <p><a href="mailto:13519195@std.stei.itb.ac.id"><i class="fa fa-envelope"></i> 13519195@std.stei.itb.ac.id</a></p>
+                <p><a href="https://www.linkedin.com/in/prana-gusriana" target="_blank"><i class="fa fa-linkedin"></i> Prana Gusriana</a></p>
+            </article>
+        </div>
+        
+        <aside>
+            <article class="profile card">
+                <header>
+                    <h2>Prana Gusriana</h2>
+                    <div class="center">
+                        <img src="assets/image/profile.jpg" class="profile-img">
+                    </div>
+                </header>
+                
+                <section>
+                    <h3>Skills</h3>
+                    <ul class="listSkills">
+                        <li>Programming Language: Python, MATLAB, JavaScript, PHP, Java, C++, C#, C</li>
+                        <li>Familiar with tools for web development such as HTML, CSS, JavaScript, PHP</li>
+                        <li>Familiar with SQL database management systems such as MariaDB, PostgreSQL, and SQLite</li>
+                        <li>Familiar with analytical tools such as Excel, Tableau, Python (using pandas, matplotlib, and other libraries)</li>
+                        <li>Familiar with machine learning algorithms such as Decision Tree, SVM, Neural Network, K-Means, and others</li>
+                        <li>Familiar with machine learning frameworks such as TensorFlow, PyTorch, FastAI</li>
+                        <li>Accustomed to version control systems workflow such as Git</li>
+                        <li>Familiar with Command-Line Interface (Windows/Linux)</li>
+                    </ul>
+                </section>
+            </article>
+        </aside>
+    </main>
+    
+
+    <footer>
+        <p>Personal Website &#169; 2022, Prana Gusriana</p>
+    </footer>
+
+    <script src="./assets/data/project.js"></script>
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>
+

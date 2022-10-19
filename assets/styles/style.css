@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c8d8e4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h2, h3 {
+    color: #2b6777;
+}
+
+footer {
+    padding: 20px;
+    background-color: white;
+    color: #52ab98;
+    text-align: center;
+    font-weight: bold;
+}
+
+nav a, #contact a {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #52ab98;
+    padding: 5px;
+}
+
+nav a:hover, #contact a:hover {
+    border-bottom: 2px solid #52ab98;
+}
+
+.profile header {
+    text-align: center;
+}
+
+.featured-image {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.project-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile img {
+    width: 200px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.jumbotron {
+    padding: 60px;
+    background-color: #f2f2f2;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    position: relative;
+    z-index: 1000;
+}
+
+nav li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+nav ul {
+    text-align: center;
+    padding: 0px;
+}
+
+nav {
+    background-color: white;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+main {
+    padding: 20px;
+    overflow: auto;
+}
+
+#content {
+    float: left;
+    width: 75%;
+}
+
+aside {
+    float: right;
+    width: 25%;
+    padding-left: 20px;
+}
+
+header {
+    display: inline;
+}
+
+.center {
+    text-align: center;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.listSkills li {
+    margin: 10px 0;
+}
+
+blockquote {
+    color: rgba(82, 171, 152, 1);
+    font-family: Tahoma, sans-serif;
+    font-size: 40px;
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+ }
+
+ blockquote p {
+    font-style: italic;
+    margin-bottom: 0;
+ }
+ 
+ blockquote p::before, blockquote p::after {
+    content: "“";
+    font-family: Georgia;
+    font-size: 8rem;
+    margin: -2rem 0 0 -4rem;
+    position: absolute;
+    opacity: 0.5;
+ }
+ 
+ blockquote p::after {
+    content: "”";
+    margin: -1rem -4rem 0 0;
+ }
+ 
+ blockquote cite {
+    font-size: 1.5rem;
+ }
+
+ .photo-quotes{
+    position: relative;
+    overflow: auto;
+    max-height: 600px;
+ }
+
+ .quotes-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 120px;
+ }
+
+ .flex-container-column {
+    display: flex;
+    flex-direction: column;
+
+    /* properti pendukung */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex-container-row {
+    display: flex;
+}
+
+.project-item {
+    flex-basis: 50%;
+    margin-left: 15px;
+}
+
+.project-item:hover {
+    border: 2px solid #52ab98;
+}
+
+.project-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #52ab98;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    height: 15%;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 2px 16px;
+    height: 80%;
+    overflow: auto;
+}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #52ab98;
+    color: white;
+    height: 5%;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 70%;
+    height: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+@media screen and (max-width: 1000px) {
+    #content,
+    aside {
+      width: 100%;
+      padding: 0;
+    }
+
+    blockquote{
+        width: 80%;
+        font-size: 40px;
+    }
+
+    .quotes-container {
+        padding-top: 100px;
+    }
+}
+
+@media screen and (max-width: 749px) {
+    blockquote{
+        width: 80%;
+        font-size: 32px;
+    }
+
+    .quotes-container {
+        padding-top: 80px;
+    }
+}
+
+@media screen and (max-width: 749px) {
+    blockquote{
+        width: 80%;
+        font-size: 32px;
+    }
+
+    .quotes-container {
+        padding-top: 80px;
+    }
+}
+
+@media screen and (max-width: 615px) {
+    blockquote{
+        width: 90%;
+        font-size: 32px;
+    }
+
+    .quotes-container {
+        padding-top: 70px;
+    }
+}
+
+@media screen and (max-width: 556px) {
+    blockquote{
+        width: 100%;
+        font-size: 32px;
+    }
+
+    .quotes-container {
+        padding-top: 60px;
+    }
+}
+
+@media screen and (max-width: 508px) {
+    blockquote{
+        width: 100%;
+        font-size: 28px;
+    }
+
+    .quotes-container {
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    blockquote{
+        width: 100%;
+        font-size: 24px;
+    }
+
+    .quotes-container {
+        padding-top: 40px;
+    }
+}
+
+@media screen and (max-width: 401px) {
+    blockquote{
+        width: 100%;
+        font-size: 24px;
+    }
+
+    .quotes-container {
+        padding-top: 0;
+    }
+}
