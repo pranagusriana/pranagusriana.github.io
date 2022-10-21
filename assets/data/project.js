@@ -22,9 +22,9 @@ const nProject = projectData.length;
 const nRow = Math.floor(nProject/nCol);
 
 function createProjectItem({id, name, image, desc, repo, deploy}){
-    return `<div class="project-item card">
+    return `<div class="project-item card pointer"  id=${id}>
         <img src="${image}" class="project-image">
-        <p class="pointer project-title" id=${id}>${name}</p>
+        <p class="project-title">${name}</p>
     </div>`;
 };
 

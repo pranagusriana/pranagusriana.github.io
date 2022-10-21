@@ -132,34 +132,20 @@ header {
 blockquote {
     color: rgba(82, 171, 152, 1);
     font-family: Tahoma, sans-serif;
-    font-size: 40px;
-    width: 70%;
+    font-size: 4vw;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.75);
     text-align: center;
+    padding: 10px;
  }
 
  blockquote p {
     font-style: italic;
-    margin-bottom: 0;
- }
- 
- blockquote p::before, blockquote p::after {
-    content: "“";
-    font-family: Georgia;
-    font-size: 8rem;
-    margin: -2rem 0 0 -4rem;
-    position: absolute;
-    opacity: 0.5;
- }
- 
- blockquote p::after {
-    content: "”";
-    margin: -1rem -4rem 0 0;
+    margin: 0;
  }
  
  blockquote cite {
-    font-size: 1.5rem;
+    font-size: 0.6em;
  }
 
  .photo-quotes{
@@ -170,11 +156,10 @@ blockquote {
 
  .quotes-container {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding-top: 120px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
  }
 
  .flex-container-column {
@@ -192,7 +177,7 @@ blockquote {
 
 .project-item {
     flex-basis: 50%;
-    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .project-item:hover {
@@ -223,14 +208,14 @@ blockquote {
   
 /* The Close Button */
 .close {
-    color: #aaa;
+    color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
   
 .close:hover, .close:focus {
-    color: black;
+    color: #fefefe;
     text-decoration: none;
     cursor: pointer;
 }
@@ -241,7 +226,8 @@ blockquote {
     background-color: #52ab98;
     color: white;
     border-radius: 10px 10px 0 0;
-    height: 15%;
+    height: 10%;
+    margin: 0;
 }
 
 /* Modal Body */
@@ -256,29 +242,31 @@ blockquote {
     padding: 2px 16px;
     background-color: #52ab98;
     color: white;
-    height: 5%;
+    height: 10%;
     border-radius: 0 0 10px 10px;
 }
 
 /* Modal Content */
 .modal-content {
-    position: relative;
+    position: absolute;
     background-color: #fefefe;
-    margin: auto;
+    margin: 0 auto;
     padding: 0;
-    width: 70%;
-    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 90%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     animation-name: animatetop;
     animation-duration: 0.4s;
     border-radius: 10px;
-    margin-top: 50px;
 }
 
 /* Add Animation */
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
+    to {top: 50%; opacity: 1}
 }
 
 @media screen and (max-width: 1000px) {
@@ -287,90 +275,10 @@ blockquote {
       width: 100%;
       padding: 0;
     }
-
-    blockquote{
-        width: 80%;
-        font-size: 40px;
-    }
-
-    .quotes-container {
-        padding-top: 100px;
-    }
 }
 
-@media screen and (max-width: 749px) {
-    blockquote{
-        width: 80%;
-        font-size: 32px;
-    }
-
-    .quotes-container {
-        padding-top: 80px;
-    }
-}
-
-@media screen and (max-width: 749px) {
-    blockquote{
-        width: 80%;
-        font-size: 32px;
-    }
-
-    .quotes-container {
-        padding-top: 80px;
-    }
-}
-
-@media screen and (max-width: 615px) {
-    blockquote{
-        width: 90%;
-        font-size: 32px;
-    }
-
-    .quotes-container {
-        padding-top: 70px;
-    }
-}
-
-@media screen and (max-width: 556px) {
-    blockquote{
-        width: 100%;
-        font-size: 32px;
-    }
-
-    .quotes-container {
-        padding-top: 60px;
-    }
-}
-
-@media screen and (max-width: 508px) {
-    blockquote{
-        width: 100%;
-        font-size: 28px;
-    }
-
-    .quotes-container {
-        padding-top: 50px;
-    }
-}
-
-@media screen and (max-width: 455px) {
-    blockquote{
-        width: 100%;
-        font-size: 24px;
-    }
-
-    .quotes-container {
-        padding-top: 40px;
-    }
-}
-
-@media screen and (max-width: 401px) {
-    blockquote{
-        width: 100%;
-        font-size: 24px;
-    }
-
-    .quotes-container {
-        padding-top: 0;
+@media screen and (max-width: 576px) {
+    .flex-container-row {
+        flex-direction: column;
     }
 }
