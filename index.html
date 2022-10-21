@@ -66,9 +66,38 @@
 
             <article id="contact" class="card">
                 <h2>Contact</h2>
-                <p><a href="mailto:pranagusriana@gmail.com"><i class="fa fa-envelope"></i> pranagusriana@gmail.com</a></p>
-                <p><a href="mailto:13519195@std.stei.itb.ac.id"><i class="fa fa-envelope"></i> 13519195@std.stei.itb.ac.id</a></p>
-                <p><a href="https://www.linkedin.com/in/prana-gusriana" target="_blank"><i class="fa fa-linkedin"></i> Prana Gusriana</a></p>
+                <div class="flex-container-row">
+                    <div class="info-contact card">
+                        <p>You can contact me here</p>
+                        <p><a href="mailto:pranagusriana@gmail.com"><i class="fa fa-envelope"></i> pranagusriana@gmail.com</a></p>
+                        <p><a href="mailto:13519195@std.stei.itb.ac.id"><i class="fa fa-envelope"></i> 13519195@std.stei.itb.ac.id</a></p>
+                        <p><a href="https://www.linkedin.com/in/prana-gusriana" target="_blank"><i class="fa fa-linkedin"></i> Prana Gusriana</a></p>
+                    </div>
+                    <div class="send-message card">
+                        <form id="contact-form">
+                            <p>
+                                Or you can directly send me a message here
+                            </p>
+        
+                            <div class="form-element">
+                                <input type="text" name="name" placeholder="Name" required>
+                            </div>
+                            <div class="form-element">
+                                <input type="text" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-element">
+                                <input type="text" name="subject" placeholder="Subject" autocomplete="off" required>
+                            </div>
+                            <div class="form-element">
+                                <textarea name="message" placeholder="Message" autocomplete="off" required></textarea>
+                            </div>
+                            <div class="form-element">
+                                <input class="pointer" id="submitButton" type="submit" value="Submit Data">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             </article>
         </div>
         
@@ -105,5 +134,6 @@
 
     <script src="./assets/data/project.js"></script>
     <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/contactme.js"></script>
 </body>
 </html>
