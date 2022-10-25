@@ -48,7 +48,13 @@ nav a:hover, #contact a:hover {
 
 .project-image {
     width: 100%;
-    max-height: 300px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.detail-project-image {
+    width: 100%;
     object-fit: cover;
     object-position: center;
 }
@@ -195,7 +201,7 @@ blockquote {
     border: 2px solid #52ab98;
 }
 
-.project-title {
+.project-title, .year-project {
     text-align: center;
     font-weight: bold;
 }

@@ -1,15 +1,26 @@
 const projectData = [
     {
         "id": 0,
+        "name": "Bookshelf Apps Project",
+        "year": 2022,
+        "image": "./assets/image/project-bookshelf.gif",
+        "desc": "This project aims to build a web-based bookshelf application using HTML, CSS, and JavaScript",
+        "repo": "https://github.com/pranagusriana/bookshelf-apps",
+        "deploy": "https://pranagusriana.github.io/bookshelf-apps/"
+    },
+    {
+        "id": 1,
         "name": "Image Filtering Project",
+        "year": 2022,
         "image": "./assets/image/project-1.gif",
         "desc": "This project aims to create an image filtering application using MATLAB based on a GUI",
         "repo": "https://github.com/pranagusriana/image-filtering-apps",
         "deploy": null
     },
     {
-        "id": 1,
+        "id": 2,
         "name": "Image Enhancement Project",
+        "year": 2022,
         "image": "./assets/image/project-2.gif",
         "desc": "This project aims to create an image enhancement application using MATLAB based on a GUI",
         "repo": "https://github.com/pranagusriana/image-enhancement-apps",
@@ -19,9 +30,9 @@ const projectData = [
 
 const nCol = 2;
 const nProject = projectData.length;
-const nRow = Math.floor(nProject/nCol);
+const nRow = Math.ceil(nProject/nCol);
 
-function createProjectItem({id, name, image, desc, repo, deploy}){
+function createProjectItem({id, name, year, image, desc, repo, deploy}){
     const imgProject = document.createElement('img');
     imgProject.classList.add('project-image');
     imgProject.src = image;
@@ -66,7 +77,7 @@ function loadProject(){
     }
 }
 
-function createModalProject({id, name, image, desc, repo, deploy}){
+function createModalProject({id, name, year, image, desc, repo, deploy}){
     const closeBtn = document.createElement('span');
     closeBtn.classList.add('close');
     closeBtn.innerHTML = '&times;';
@@ -83,7 +94,7 @@ function createModalProject({id, name, image, desc, repo, deploy}){
     modalHeaderContainer.append(closeBtn, titleProject);
 
     const imgProject = document.createElement('img');
-    imgProject.classList.add('featured-image');
+    imgProject.classList.add('detail-project-image');
     imgProject.src = image;
 
     const descItem = document.createElement('p');
@@ -110,16 +121,21 @@ function createModalProject({id, name, image, desc, repo, deploy}){
         deployItem.innerText = 'You can see deployed this project ';
 
         const deployLink = document.createElement('a');
-        deployLink.href = repo;
+        deployLink.href = deploy;
         deployLink.innerText = 'here';
 
-        deployItem.append(repoLink);
+        deployItem.append(deployLink);
 
         modalBodyContainer.append(deployItem);
     }
 
+    const yearProject = document.createElement('p');
+    yearProject.classList.add('year-project');
+    yearProject.innerText = year;
+
     const modalFooterContainer = document.createElement('div');
     modalFooterContainer.classList.add('modal-footer');
+    modalFooterContainer.append(yearProject);
 
     const modalContentElement = document.createElement('div');
     modalContentElement.classList.add('modal-content');
