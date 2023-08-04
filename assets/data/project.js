@@ -1,37 +1,3 @@
-const projectData = [
-    {
-        "id": 0,
-        "name": "Bookshelf Apps Project",
-        "year": 2022,
-        "image": "./assets/image/project-bookshelf.gif",
-        "desc": "This project aims to build a web-based bookshelf application using HTML, CSS, and JavaScript",
-        "repo": "https://github.com/pranagusriana/bookshelf-apps",
-        "deploy": "https://pranagusriana.github.io/bookshelf-apps/"
-    },
-    {
-        "id": 1,
-        "name": "Image Filtering Project",
-        "year": 2022,
-        "image": "./assets/image/project-1.gif",
-        "desc": "This project aims to create an image filtering application using MATLAB based on a GUI",
-        "repo": "https://github.com/pranagusriana/image-filtering-apps",
-        "deploy": null
-    },
-    {
-        "id": 2,
-        "name": "Image Enhancement Project",
-        "year": 2022,
-        "image": "./assets/image/project-2.gif",
-        "desc": "This project aims to create an image enhancement application using MATLAB based on a GUI",
-        "repo": "https://github.com/pranagusriana/image-enhancement-apps",
-        "deploy": null
-    }
-];
-
-const nCol = 2;
-const nProject = projectData.length;
-const nRow = Math.ceil(nProject/nCol);
-
 function createProjectItem({id, name, year, image, desc, repo, deploy}){
     const imgProject = document.createElement('img');
     imgProject.classList.add('project-image');
@@ -52,16 +18,19 @@ function createProjectItem({id, name, year, image, desc, repo, deploy}){
         const modal = document.getElementById('myModal');
         modal.innerHTML = '';
         
-        modal.append(createModalProject(projectData[id]));
+        modal.append(createModalProject({id, name, year, image, desc, repo, deploy}));
         modal.style.display = "block";
     })
 
     return projectItem;
 };
 
-function loadProject(){
+function loadProject(projectData){
     const projectList = document.getElementById('project-list');
     projectList.innerHTML = '';
+    const nCol = 2;
+    const nProject = projectData.length;
+    const nRow = Math.ceil(nProject/nCol);
     let id = 0;
     for(let i = 0; i < nRow; i++){
         const containerRow = document.createElement('div');

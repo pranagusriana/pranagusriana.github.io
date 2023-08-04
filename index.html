@@ -10,9 +10,9 @@
 </head>
 <body>
     <header>
-        <div class="jumbotron">
+        <div class="jumbotron" id="header">
             <h1>Hi! I'm Prana Gusriana.</h1>
-            <p>A Final Year Student in Computer Science at Bandung Institute of Technology</p>
+            <p id="description-title"></p>
         </div>
         <nav>
             <ul>
@@ -27,8 +27,8 @@
         <div id="content">
             <article id="aboutme" class="card">
                 <h2>About Me</h2>
-                <img src="./assets/image/stud.jpg" class="featured-image">
-                <p>Hi! my name is Prana Gusriana, currently I am a final year student majoring in Computer Science at Bandung Institute of Technology who is eager to learn anything especially in the fields of data analysis, data science, artificial intelligence, machine learning, and software engineering. Proficient in using the Python programming language to perform data analysis, data visualization, create machine learning models, and other tasks. I am so excited when I can engage and successfully solve challenging real world problems using all my knowledge and learn a lot from them.</p>
+                <img src="" class="featured-image" id="main-photo-profile">
+                <p id="description"></p>
                 
                 <h2>Hobbies and Interest</h2>
 
@@ -43,7 +43,7 @@
                         </blockquote>
                     </div>
                 </div>
-                <p>I am interested in photography because I can capture the present moment so that I can remember and feel that moment again in the future.</p>
+                <p>I am interested in photography because I can capture the present moment so that I can remember and feel that moment again in the future. You can see the results of my photos on the following <a href="https://www.instagram.com/prana.motret">instagram</a>.</p>
 
                 <h3>Reading Books</h3>
                 <img src="./assets/image/read-books.png" class="featured-image">
@@ -108,21 +108,14 @@
                 <header>
                     <h2>Prana Gusriana</h2>
                     <div class="center">
-                        <img src="assets/image/profile.jpg" class="profile-img">
+                        <img src="" class="profile-img" id="side-photo-profile">
                     </div>
                 </header>
                 
                 <section>
                     <h3>Skills</h3>
-                    <ul class="listSkills">
-                        <li>Programming Language: Python, MATLAB, JavaScript, PHP, Java, C++, C#, C</li>
-                        <li>Familiar with tools for web development such as HTML, CSS, JavaScript, PHP</li>
-                        <li>Familiar with SQL database management systems such as MariaDB, PostgreSQL, and SQLite</li>
-                        <li>Familiar with analytical tools such as Excel, Tableau, Python (using pandas, matplotlib, and other libraries)</li>
-                        <li>Familiar with machine learning algorithms such as Decision Tree, SVM, Neural Network, K-Means, and others</li>
-                        <li>Familiar with machine learning frameworks such as TensorFlow, PyTorch, FastAI</li>
-                        <li>Accustomed to version control systems workflow such as Git</li>
-                        <li>Familiar with Command-Line Interface (Windows/Linux)</li>
+                    <ul class="listSkills" id="list-skills">
+                        
                     </ul>
                 </section>
             </article>
@@ -131,11 +124,13 @@
     
 
     <footer>
-        <p>Personal Website &#169; 2022, Prana Gusriana</p>
+        <p>Personal Website &#169; 2023, Prana Gusriana</p>
     </footer>
 
     <script src="./assets/data/project.js"></script>
+    <script src="./assets/data/personalInformation.js"></script>
     <script src="./assets/js/index.js"></script>
     <script src="./assets/js/contactme.js"></script>
+    <script src="./assets/js/loadPages.js"></script>
 </body>
 </html>

@@ -79,6 +79,12 @@ nav a:hover, #contact a:hover {
     color: black;
     position: relative;
     z-index: 1000;
+    background-size: cover;
+}
+
+.jumbotron h1, .jumbotron p{
+    background-color: rgba(242, 242, 242, 0.5);
+    padding: 5px;
 }
 
 nav li {
