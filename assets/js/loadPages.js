@@ -8,6 +8,8 @@ function loadPages() {
         let response = JSON.parse(request.responseText);
         let data = response["data"];
         loadPersonalInformation(data["personal-information"])
+        loadExperiences(data["experiences"]);
+        loadCV(data["cv"]);
         loadProject(data["projects"]);
     };
 

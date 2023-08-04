@@ -59,9 +59,9 @@ nav a:hover, #contact a:hover {
     object-position: center;
 }
 
-.profile img {
+/* .profile img {
     width: 200px;
-}
+} */
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -139,6 +139,7 @@ header {
 
 .listSkills li {
     margin: 10px 0;
+    font-size: 0.83em;
 }
 
 blockquote {
@@ -193,6 +194,25 @@ blockquote {
     margin: 15px;
 }
 
+.company-logo {
+    flex-basis: 20%;
+}
+
+.experience-detail {
+    padding-left: 5px;
+}
+
+.experience-detail h4, .experience-detail h5 {
+    margin: 0px;
+}
+
+.experience-detail .sub {
+    color: #aaaaaa;
+}
+
+.experience-detail li, .experience-detail p{
+    font-size: 0.83em;
+}
 .send-message{
     flex-basis: 60%;
     margin: 15px;

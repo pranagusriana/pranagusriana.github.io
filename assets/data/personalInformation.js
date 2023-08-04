@@ -17,3 +17,60 @@ function loadPersonalInformation(listInfo){
         }
     }
 }
+
+function loadExperiences(listExperience){
+    const expList = document.getElementById('list-experiences');
+    expList.innerHTML = '';
+    for(let exp of listExperience){
+        const expItem = createExperienceItem(exp);
+        expList.append(expItem);
+    }
+}
+
+function createExperienceItem({id, title, company, experienceLevel, startDate, endDate, location, description, skills, companyLogo}){
+    const titleExperience = document.createElement('h4');
+    titleExperience.innerText = title;
+
+    const companyText = document.createElement("h5");
+    companyText.innerText = `${company} · ${experienceLevel}`;
+
+    const dateExp = document.createElement("h5");
+    dateExp.classList.add("sub");
+    dateExp.innerText = `${startDate} - ${endDate}`;
+
+    const locExp = document.createElement("h5");
+    locExp.classList.add("sub");
+    locExp.innerText = `${location}`;
+
+    const descriptionText = document.createElement("ul");
+    descriptionText.innerHTML = description;
+
+    const skillsText = document.createElement("p");
+    skillsText.innerHTML = `<strong>Skills:</strong> ${skills}`;
+
+    const companyImg = document.createElement('img');
+    companyImg.width = 48;
+    companyImg.height = 48;
+    companyImg.src = companyLogo;
+
+    const expDetail = document.createElement("div");
+    expDetail.classList.add("experience-detail");
+    expDetail.append(titleExperience, companyText, dateExp, locExp, descriptionText, skillsText);
+
+    const compLogo = document.createElement("div");
+    compLogo.classList.add("company-logo");
+    compLogo.append(companyImg);
+
+    const container = document.createElement("div");
+    container.classList.add("flex-container-row");
+    container.append(compLogo, expDetail);
+
+    return container;
+}
+
+function loadCV(cvUrl){
+    document.getElementById("viewCVButton").onclick = ()=>{
+        window.open(cvUrl, '_blank'); 
+        return false;
+    }
+}
