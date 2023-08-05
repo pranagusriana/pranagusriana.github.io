@@ -128,7 +128,7 @@ function getDeviceInformation(){
 
 function getIP() {
     return new Promise(function (resolve, reject) {
-        var url = "http://www.geoplugin.net/json.gp";
+        var url = "https://www.geoplugin.net/json.gp";
         var request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.onload = function() { 
