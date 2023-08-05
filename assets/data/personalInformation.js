@@ -69,7 +69,7 @@ function createExperienceItem({id, title, company, experienceLevel, startDate, e
 }
 
 function loadCV(cvUrl){
-    document.getElementById("viewCVButton").onclick = ()=>{
+    document.getElementById("view-cv-button").onclick = ()=>{
         window.open(cvUrl, '_blank'); 
         return false;
     }

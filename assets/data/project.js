@@ -15,6 +15,11 @@ function createProjectItem({id, name, year, image, desc, repo, deploy}){
     projectItem.append(imgProject, titleProject);
 
     projectItem.addEventListener('click', function(){
+        const eventName = "CLICK_PROJECT";
+        const value = `project-${id}`;
+        updateSession();
+        trackEvent(eventName, value);
+
         const modal = document.getElementById('myModal');
         modal.innerHTML = '';
         

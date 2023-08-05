@@ -16,9 +16,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#aboutme">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#aboutme" id="about-me-button">About Me</a></li>
+                <li><a href="#projects" id="projects-button">Projects</a></li>
+                <li><a href="#contact" id="contact-button">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -43,7 +43,7 @@
                         </blockquote>
                     </div>
                 </div>
-                <p>I am interested in photography because I can capture the present moment so that I can remember and feel that moment again in the future. You can see the results of my photos on the following <a href="https://www.instagram.com/prana.motret">instagram</a>.</p>
+                <p>I am interested in photography because I can capture the present moment so that I can remember and feel that moment again in the future. You can see the results of my photos on the following <a href="https://www.instagram.com/prana.motret" target="_blank" id="ig-prana-motret">instagram</a>.</p>
 
                 <h3>Reading Books</h3>
                 <img src="./assets/image/read-books.png" class="featured-image">
@@ -69,9 +69,9 @@
                 <div class="flex-container-row">
                     <div class="info-contact card">
                         <p>You can contact me here</p>
-                        <p><a href="mailto:pranagusriana@gmail.com"><i class="fa fa-envelope"></i> pranagusriana@gmail.com</a></p>
-                        <p><a href="mailto:13519195@std.stei.itb.ac.id"><i class="fa fa-envelope"></i> 13519195@std.stei.itb.ac.id</a></p>
-                        <p><a href="https://www.linkedin.com/in/prana-gusriana" target="_blank"><i class="fa fa-linkedin"></i> Prana Gusriana</a></p>
+                        <p><a href="mailto:pranagusriana@gmail.com" id="main-email"><i class="fa fa-envelope"></i> pranagusriana@gmail.com</a></p>
+                        <p><a href="mailto:13519195@std.stei.itb.ac.id" id="university-email"><i class="fa fa-envelope"></i> 13519195@std.stei.itb.ac.id</a></p>
+                        <p><a href="https://www.linkedin.com/in/prana-gusriana" target="_blank" id="linkedin-link"><i class="fa fa-linkedin"></i> Prana Gusriana</a></p>
                     </div>
                     <div class="send-message card">
                         <form id="contact-form">
@@ -92,7 +92,7 @@
                                 <textarea name="message" placeholder="Message" autocomplete="off" required></textarea>
                             </div>
                             <div class="form-element">
-                                <button type="submit" class="pointer" id="submitButton">
+                                <button type="submit" class="pointer" id="send-message-button">
                                     <i class="fa fa-send"></i> Send
                                 </button>
                             </div>
@@ -127,7 +127,7 @@
 
                 <section>
                     <div class="center">
-                        <button type="submit" class="pointer" id="viewCVButton">
+                        <button type="submit" class="pointer" id="view-cv-button">
                             <i class="fa fa-eye"></i> View My CV
                         </button>
                     </div>
@@ -146,5 +146,6 @@
     <script src="./assets/js/index.js"></script>
     <script src="./assets/js/contactme.js"></script>
     <script src="./assets/js/loadPages.js"></script>
+    <script src="./assets/js/tracking.js"></script>
 </body>
 </html>
