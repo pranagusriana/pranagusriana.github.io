@@ -128,7 +128,7 @@ function getDeviceInformation(){
 
 function getIP() {
     return new Promise(function (resolve, reject) {
-        var url = "https://www.geoplugin.net/json.gp";
+        var url = "https://ipinfo.io/json";
         var request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.onload = function() { 
@@ -136,13 +136,12 @@ function getIP() {
             // we can use server response to our request now
             let response = JSON.parse(request.responseText);
             let ret = {
-                "ipAddress": response["geoplugin_request"],
-                "latitude": Number(response["geoplugin_latitude"]),
-                "longitude": Number(response["geoplugin_longitude"]),
-                "city": response["geoplugin_city"],
-                "region": response["geoplugin_regionName"],
-                "country": response["geoplugin_countryName"],
-                "continent": response["geoplugin_continentName"]
+                "ipAddress": response["ip"],
+                "latitude": Number(response["loc"].split(",")[0]),
+                "longitude": Number(response["loc"].split(",")[1]),
+                "city": response["city"],
+                "region": response["region"],
+                "country": response["country"]
             }
             
             resolve(ret);
