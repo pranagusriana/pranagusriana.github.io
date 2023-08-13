@@ -9,11 +9,14 @@ document.body.addEventListener("click", function(e) {
 });
 
 const maxSecondsSession = 30 * 60; // seconds
+var scrollTimer = null;
+const scrollTime = 1000;
+var firstScrollTimestamp = null;
 
 getMachineId();
 
 document.body.addEventListener('mousemove', updateSession);
-document.body.addEventListener('scroll', updateSession);
+document.addEventListener('scroll', scrollHandler);
 document.body.addEventListener('keydown', updateSession);
 document.body.addEventListener('touchstart', updateSession);
 
@@ -22,7 +25,21 @@ const possibleValues = {
     "utm_medium": ["social", "referal", "work_application"]
 };
 
-
+function scrollHandler() {
+    updateSession();
+    if(firstScrollTimestamp == null){
+        firstScrollTimestamp = getCurrentTimestamp();
+    }
+    if(scrollTimer !== null) {
+        clearTimeout(scrollTimer);
+    };
+    scrollTimer = setTimeout(function() {
+        const eventName = "SCROLL";
+        const value = +(diffTwoTimestamp(firstScrollTimestamp, getCurrentTimestamp()) - scrollTime/1000).toFixed(3);
+        firstScrollTimestamp = null;
+        trackEvent(eventName, value);
+    }, scrollTime);
+}
 
 async function getMachineId() {
 
