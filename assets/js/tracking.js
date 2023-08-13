@@ -5,6 +5,7 @@ document.body.addEventListener("click", function(e) {
         const value = e.target.id;
         updateSession();
         trackEvent(eventName, value);
+        isUserScroll = false;
 	}
 });
 
@@ -12,13 +13,15 @@ const maxSecondsSession = 30 * 60; // seconds
 var scrollTimer = null;
 const scrollTime = 1000;
 var firstScrollTimestamp = null;
+var isUserScroll = false;
 
 getMachineId();
 
-document.body.addEventListener('mousemove', updateSession);
+document.addEventListener('mousemove', function() {updateSession(); isUserScroll=true;});
 document.addEventListener('scroll', scrollHandler);
-document.body.addEventListener('keydown', updateSession);
-document.body.addEventListener('touchstart', updateSession);
+document.addEventListener('keydown', function() {updateSession(); isUserScroll=true;});
+document.addEventListener('touchstart', function() {updateSession(); isUserScroll=true;});
+document.addEventListener('wheel', function() {updateSession(); isUserScroll=true;});
 
 const possibleValues = {
     "utm_source": ["whatsapp", "instagram", "linkedin", "twitter", "tiktok", "email", "cv", "work_application"],
@@ -27,18 +30,21 @@ const possibleValues = {
 
 function scrollHandler() {
     updateSession();
-    if(firstScrollTimestamp == null){
-        firstScrollTimestamp = getCurrentTimestamp();
+    if (isUserScroll){
+        if(firstScrollTimestamp == null){
+            firstScrollTimestamp = getCurrentTimestamp();
+        }
+        if(scrollTimer !== null) {
+            clearTimeout(scrollTimer);
+        };
+        scrollTimer = setTimeout(function() {
+            const eventName = "SCROLL";
+            const value = +(diffTwoTimestamp(firstScrollTimestamp, getCurrentTimestamp()) - scrollTime/1000).toFixed(3);
+            firstScrollTimestamp = null;
+            trackEvent(eventName, value);
+            isUserScroll = false;
+        }, scrollTime);
     }
-    if(scrollTimer !== null) {
-        clearTimeout(scrollTimer);
-    };
-    scrollTimer = setTimeout(function() {
-        const eventName = "SCROLL";
-        const value = +(diffTwoTimestamp(firstScrollTimestamp, getCurrentTimestamp()) - scrollTime/1000).toFixed(3);
-        firstScrollTimestamp = null;
-        trackEvent(eventName, value);
-    }, scrollTime);
 }
 
 async function getMachineId() {
