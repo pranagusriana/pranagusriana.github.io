@@ -1,4 +1,4 @@
-function createProjectItem({id, name, year, image, desc, repo, deploy}){
+function createProjectItem({id, name, year, image, desc}){
     const imgProject = document.createElement('img');
     imgProject.classList.add('project-image');
     imgProject.src = image;
@@ -23,7 +23,7 @@ function createProjectItem({id, name, year, image, desc, repo, deploy}){
         const modal = document.getElementById('myModal');
         modal.innerHTML = '';
         
-        modal.append(createModalProject({id, name, year, image, desc, repo, deploy}));
+        modal.append(createModalProject({id, name, year, image, desc}));
         modal.style.display = "block";
     })
 
@@ -51,7 +51,7 @@ function loadProject(projectData){
     }
 }
 
-function createModalProject({id, name, year, image, desc, repo, deploy}){
+function createModalProject({id, name, year, image, desc}){
     const closeBtn = document.createElement('span');
     closeBtn.classList.add('close');
     closeBtn.innerHTML = '&times;';
@@ -71,38 +71,13 @@ function createModalProject({id, name, year, image, desc, repo, deploy}){
     imgProject.classList.add('detail-project-image');
     imgProject.src = image;
 
-    const descItem = document.createElement('p');
-    descItem.innerText = desc;
+    const descItem = document.createElement('div');
+    descItem.innerHTML = desc;
 
     const modalBodyContainer = document.createElement('div');
     modalBodyContainer.classList.add('modal-body');
     modalBodyContainer.append(imgProject, descItem);
-    if (repo){
-        const repoItem = document.createElement('p');
-        repoItem.innerText = 'You can see repository of this project ';
-
-        const repoLink = document.createElement('a');
-        repoLink.href = repo;
-        repoLink.innerText = 'here';
-
-        repoItem.append(repoLink);
-
-        modalBodyContainer.append(repoItem);
-    }
-
-    if (deploy){
-        const deployItem = document.createElement('p');
-        deployItem.innerText = 'You can see deployed this project ';
-
-        const deployLink = document.createElement('a');
-        deployLink.href = deploy;
-        deployLink.innerText = 'here';
-
-        deployItem.append(deployLink);
-
-        modalBodyContainer.append(deployItem);
-    }
-
+    
     const yearProject = document.createElement('p');
     yearProject.classList.add('year-project');
     yearProject.innerText = year;
