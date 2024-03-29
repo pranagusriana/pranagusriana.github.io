@@ -123,6 +123,7 @@ async function registerSession(utmParams) {
     deviceInfo = {...deviceInfo, ...ip, ...utmParams};
     deviceInfo["sessionID"] = sessionId;
     deviceInfo["visitTimestamp"] = visitTimestamp;
+    deviceInfo["userAgent"] = navigator.userAgent;
 
     trackVisit(deviceInfo);
 }
