@@ -14,6 +14,7 @@ var scrollTimer = null;
 const scrollTime = 1000;
 var firstScrollTimestamp = null;
 var isUserScroll = false;
+const trackingEnablement = true;
 
 getMachineId();
 
@@ -238,58 +239,62 @@ function diffTwoTimestamp(isostring1, isostring2){
 }
 
 function trackEvent(eventName, value){
-    let timestamp = getCurrentTimestamp();
-    let deviceID = JSON.parse(localStorage.getItem("PPW_DeviceID"))["deviceID"];
-    let sessionID = JSON.parse(localStorage.getItem("PPW_SessionID"))["sessionID"];
-    let ret = {
-        "timestamp": timestamp,
-        "deviceID": deviceID,
-        "sessionID": sessionID,
-        "eventName": eventName,
-        "value": value
-    };
-    
-    var url = "https://script.google.com/macros/s/AKfycbz_23XKcWZUd7Mi-rj3qQzxwPnTvm_7khaUxbirqWWFv32-umpItValXw7GAmaWj5cV9w/exec";
-    var request = new XMLHttpRequest();
-    request.open('POST', url, true);
-    request.onload = function() { 
-        // request successful
-        // we can use server response to our request now
-        console.log(request.responseText);
-    };
+    if (trackingEnablement) {
+        let timestamp = getCurrentTimestamp();
+        let deviceID = JSON.parse(localStorage.getItem("PPW_DeviceID"))["deviceID"];
+        let sessionID = JSON.parse(localStorage.getItem("PPW_SessionID"))["sessionID"];
+        let ret = {
+            "timestamp": timestamp,
+            "deviceID": deviceID,
+            "sessionID": sessionID,
+            "eventName": eventName,
+            "value": value
+        };
+        
+        var url = "https://script.google.com/macros/s/AKfycbz_23XKcWZUd7Mi-rj3qQzxwPnTvm_7khaUxbirqWWFv32-umpItValXw7GAmaWj5cV9w/exec";
+        var request = new XMLHttpRequest();
+        request.open('POST', url, true);
+        request.onload = function() { 
+            // request successful
+            // we can use server response to our request now
+            console.log(request.responseText);
+        };
 
-    request.onerror = function() {
-        console.log(request.responseText);
-    };
+        request.onerror = function() {
+            console.log(request.responseText);
+        };
 
-    var form_data = new FormData();
+        var form_data = new FormData();
 
-    for ( var key in ret ) {
-        form_data.append(key, ret[key]);
+        for ( var key in ret ) {
+            form_data.append(key, ret[key]);
+        }
+
+        request.send(form_data);
     }
-
-    request.send(form_data);
 }
 
 function trackVisit(data) {
-    var url = "https://script.google.com/macros/s/AKfycby0XAzhuj-IuMECZZ0O3ubN7NI-byytRd5BXFWX8ZHkxsGV5L1t-AAIQ6JzfCtpTtzA/exec";
-    var request = new XMLHttpRequest();
-    request.open('POST', url, true);
-    request.onload = function() { 
-        // request successful
-        // we can use server response to our request now
-        console.log(request.responseText);
-    };
+    if (trackingEnablement) {
+        var url = "https://script.google.com/macros/s/AKfycby0XAzhuj-IuMECZZ0O3ubN7NI-byytRd5BXFWX8ZHkxsGV5L1t-AAIQ6JzfCtpTtzA/exec";
+        var request = new XMLHttpRequest();
+        request.open('POST', url, true);
+        request.onload = function() { 
+            // request successful
+            // we can use server response to our request now
+            console.log(request.responseText);
+        };
 
-    request.onerror = function() {
-        console.log(request.responseText);
-    };
+        request.onerror = function() {
+            console.log(request.responseText);
+        };
 
-    var form_data = new FormData();
+        var form_data = new FormData();
 
-    for ( var key in data ) {
-        form_data.append(key, data[key]);
+        for ( var key in data ) {
+            form_data.append(key, data[key]);
+        }
+
+        request.send(form_data);
     }
-
-    request.send(form_data);
 }
