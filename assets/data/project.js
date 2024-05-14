@@ -30,9 +30,17 @@ function createProjectItem({id, name, year, image, desc}){
     return projectItem;
 };
 
+function sortByKey(array, key) {
+    return array.sort(function(a, b) {
+        var x = a[key]; var y = b[key];
+        return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+    });
+}
+
 function loadProject(projectData){
     const projectList = document.getElementById('project-list');
     projectList.innerHTML = '';
+    projectData = sortByKey(projectData, "id");
     const nCol = 2;
     const nProject = projectData.length;
     const nRow = Math.ceil(nProject/nCol);
@@ -53,18 +61,21 @@ function loadProject(projectData){
 
 function createModalProject({id, name, year, image, desc}){
     const closeBtn = document.createElement('span');
-    closeBtn.classList.add('close');
+    closeBtn.classList.add('custom-close');
+    closeBtn.classList.add('mt-2');
     closeBtn.innerHTML = '&times;';
     closeBtn.addEventListener('click', function(){
         document.getElementById('myModal').style.display = "none";
     });
 
     const titleProject = document.createElement('p');
-    titleProject.classList.add('project-title')
+    titleProject.classList.add('project-title');
+    titleProject.classList.add('mt-4');
     titleProject.innerText = name;
 
     const modalHeaderContainer = document.createElement('div');
-    modalHeaderContainer.classList.add('modal-header');
+    modalHeaderContainer.classList.add('custom-modal-header');
+    // modalHeaderContainer.classList.add('pt-4');
     modalHeaderContainer.append(closeBtn, titleProject);
 
     const imgProject = document.createElement('img');
@@ -75,19 +86,20 @@ function createModalProject({id, name, year, image, desc}){
     descItem.innerHTML = desc;
 
     const modalBodyContainer = document.createElement('div');
-    modalBodyContainer.classList.add('modal-body');
+    modalBodyContainer.classList.add('custom-modal-body');
     modalBodyContainer.append(imgProject, descItem);
     
     const yearProject = document.createElement('p');
     yearProject.classList.add('year-project');
+    yearProject.classList.add('mt-4');
     yearProject.innerText = year;
 
     const modalFooterContainer = document.createElement('div');
-    modalFooterContainer.classList.add('modal-footer');
+    modalFooterContainer.classList.add('custom-modal-footer');
     modalFooterContainer.append(yearProject);
 
     const modalContentElement = document.createElement('div');
-    modalContentElement.classList.add('modal-content');
+    modalContentElement.classList.add('custom-modal-content');
     modalContentElement.append(modalHeaderContainer, modalBodyContainer, modalFooterContainer);
 
     return modalContentElement;

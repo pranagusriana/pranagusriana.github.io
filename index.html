@@ -5,126 +5,141 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prana Gusriana</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 <body>
-    <header>
-        <div class="jumbotron" id="header">
-            <h1>Hi! I'm Prana Gusriana.</h1>
-            <p id="description-title"></p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#aboutme" id="about-me-button">About Me</a></li>
-                <li><a href="#projects" id="projects-button">Projects</a></li>
-                <li><a href="#contact" id="contact-button">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top justify-content-center" id="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#home" id="home-button">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#aboutme" id="about-me-button">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#portfolio" id="portfolio-button">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact" id="contact-button">Contact</a>
+            </li>
+        </ul>
+    </nav>
 
-    <main>
-        <div id="content">
-            <article id="aboutme" class="card">
-                <h2>About Me</h2>
-                <img src="" class="featured-image" id="main-photo-profile">
-                <p id="description"></p>
-                
-                <h2>Hobbies and Interest</h2>
-
-                <div id="hobbies-container"></div>
-
-            </article>
-            
-            <article id="projects" class="card">
-                <h2>Projects</h2>
-                <p>Here are some projects I've done.</p> 
-                
-                <section>
-                    <div class="flex-container-column" id="project-list">
-                    </div>
-                    <!-- The Modal -->
-                    <div id="myModal" class="modal">                    
-                    </div>
-                </section>
-
-            </article>
-
-            <article id="contact" class="card">
-                <h2>Contact</h2>
-                <div class="flex-container-row">
-                    <div class="info-contact card">
-                        <p>You can contact me here</p>
-                        <p><a href="mailto:pranagusriana@gmail.com" id="main-email"><i class="fa fa-envelope"></i> pranagusriana@gmail.com</a></p>
-                        <p><a href="mailto:13519195@std.stei.itb.ac.id" id="university-email"><i class="fa fa-envelope"></i> 13519195@std.stei.itb.ac.id</a></p>
-                        <p><a href="https://www.linkedin.com/in/prana-gusriana" target="_blank" id="linkedin-link"><i class="fa fa-linkedin"></i> Prana Gusriana</a></p>
-                    </div>
-                    <div class="send-message card">
-                        <form id="contact-form">
-                            <p>
-                                Or you can directly send me a message here
-                            </p>
-        
-                            <div class="form-element">
-                                <input type="text" name="name" placeholder="Name" required>
-                            </div>
-                            <div class="form-element">
-                                <input type="text" name="email" placeholder="Email" required>
-                            </div>
-                            <div class="form-element">
-                                <input type="text" name="subject" placeholder="Subject" autocomplete="off" required>
-                            </div>
-                            <div class="form-element">
-                                <textarea name="message" placeholder="Message" autocomplete="off" required></textarea>
-                            </div>
-                            <div class="form-element">
-                                <button type="submit" class="pointer" id="send-message-button">
-                                    <i class="fa fa-send"></i> Send
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+    <!-- Home Section -->
+    <section class="home-section" id="home">
+        <div class="container">
+            <div class="row min-vh-100">
+                <div class="home-content">
+                    <img src="" class="profile-img" id="home-photo-profile">
+                    <h1 class="text-dark">Hi! I'm Prana Gusriana</h1>
+                    <span class="text-dark" id="description-title"></span>
+                    <p class="mt-2 text-dark" id="get-to-know-me"></p>
+                    <!-- Add button download cv or get to know me better -->
                 </div>
-
-            </article>
+            </div>
         </div>
-        
-        <aside>
-            <article class="profile card">
-                <header>
-                    <h2>Prana Gusriana</h2>
-                    <div class="center">
-                        <img src="" class="profile-img" id="side-photo-profile">
-                    </div>
-                </header>
-                
-                <section>
-                    <h3>Experiences</h3>
-                    <div id="list-experiences">
-                    </div>
-                </section>
+    </section>
 
-                <section>
-                    <h3>Skills</h3>
-                    <ul class="listSkills" id="list-skills">
-                        
-                    </ul>
-                </section>
+    <!-- About Me Section-->
+    <section id="aboutme">
+        <div class="container mt-4 pt-5">
+            <h1 class="text-center">About Me</h1>
+            <div class="row mt-4">
+                <div class="col-md-8">
+                    <img src="" class= "main-profile" id="main-photo-profile" alt="Main Photo Profile">
+                    <p class="mt-4" id="description"></p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Hobbies and Interest</h2>
+                    <div id="hobbies-container"></div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-8">
+                    <h2>Experiences</h2>
+                    <div id="list-experiences"></div>
+                </div>
+                <div class="col-md-4">
+                    <h2>Skills</h2>
+                    <ul class="listSkills" id="list-skills"></ul>
+                    <section>
+                        <div class="center">
+                            <button type="submit" class="pointer" id="view-cv-button">
+                                <i class="fa fa-eye"></i> Download CV
+                            </button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+    </section>
 
-                <section>
-                    <div class="center">
-                        <button type="submit" class="pointer" id="view-cv-button">
-                            <i class="fa fa-eye"></i> View My CV
-                        </button>
-                    </div>
-                </section>
-            </article>
-        </aside>
-    </main>
-    
+    <!-- Portofolio Section -->
+    <section class="blue-bg" id="portfolio">
+        <div class="container mt-4 pt-5 pb-5">
+            <h1 class="text-center text-white">Portfolio</h1>
+            <p class="text-white">Here are some projects I've done. Click the project for the details.</p>
+            <section>
+                <div class="flex-container-column" id="project-list"></div>
+                <!-- The Modal -->
+                <div id="myModal" class="custom-modal"></div>
+            </section>
+        </div>
+    </section>
 
-    <footer>
-        <p>Personal Website &#169; 2023, Prana Gusriana</p>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container mt-4 pt-5">
+            <h1 class="text-center">Contact</h1>
+            <div class="row mt-4">
+                <div class="col">
+                    <p>You can contact me anytime via my email or my social media: </p>
+                    <p>
+                        <a href="mailto:pranagusriana@gmail.com" id="main-email"><i class="fa fa-envelope"></i></a> 
+                        <a href="https://www.linkedin.com/in/prana-gusriana" target="_blank" id="linkedin-link"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/prn.g/" target="_blank" id="instagram-link"><i class="fa fa-instagram"></i></a>
+                        <a href="https://github.com/pranagusriana" target="_blank" id="github-link"><i class="fa fa-github"></i></a>
+                    </p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <p>
+                        Or you can directly send me a message here:
+                    </p>
+                    <form id="contact-form">
+                        <div class="form-element">
+                            <input type="text" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-element">
+                            <input type="text" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-element">
+                            <input type="text" name="subject" placeholder="Subject" autocomplete="off" required>
+                        </div>
+                        <div class="form-element">
+                            <textarea name="message" placeholder="Message" autocomplete="off" required></textarea>
+                        </div>
+                        <div class="form-element">
+                            <button type="submit" class="pointer" id="send-message-button">
+                                <i class="fa fa-send"></i> Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="blue-bg text-white py-4">
+        <p>
+            Personal Website &#169; <script> document.write(new Date().getFullYear()); </script>, Prana Gusriana
+        </p>
     </footer>
 
     <script src="./assets/data/project.js"></script>

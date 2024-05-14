@@ -2,17 +2,74 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
-    margin: 0;
+    /* margin: 0;
     padding: 0;
-    background-color: #c8d8e4;
+    background-color: #c8d8e4; */
 }
 
 * {
     box-sizing: border-box;
 }
 
-h2, h3 {
+.navbar-nav {
+    display: inline-block;
+  }
+  
+.navbar-nav>li {
+    display: inline-block;
+    margin-right: 20px;
+    text-align: center;
+    padding: 5px;
+}
+
+.navbar-nav>lu {
+    text-align: center;
+    padding: 5px;
+}
+
+/* hero background image */
+.home-section {
+    height:100vh;
+    background-size:cover;
+    position:relative;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center; 
+}
+
+.home-content {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.blue-bg {
+    background-color: #00AADB;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.main-profile {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.blue-text {
+    color: #00AADB;
+}
+
+h1, h2, h3 {
     color: #2b6777;
+    color: #00AADB;
 }
 
 footer {
@@ -23,7 +80,7 @@ footer {
     font-weight: bold;
 }
 
-nav a, #contact a {
+nav a, #contact a, #home a {
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
@@ -31,7 +88,7 @@ nav a, #contact a {
     padding: 5px;
 }
 
-nav a:hover, #contact a:hover {
+nav a:hover, #contact a:hover, #home a:hover {
     border-bottom: 2px solid #52ab98;
 }
 
@@ -98,7 +155,7 @@ nav ul {
     padding: 0px;
 }
 
-nav {
+.navbarScroll {
     background-color: white;
     padding: 5px;
     position: sticky;
@@ -129,12 +186,6 @@ header {
 
 .center {
     text-align: center;
-}
-
-.profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
 }
 
 .listSkills li {
@@ -194,9 +245,9 @@ blockquote {
     margin: 15px;
 }
 
-.company-logo {
+/* .company-logo {
     flex-basis: 20%;
-}
+} */
 
 .experience-detail {
     padding-left: 5px;
@@ -237,7 +288,7 @@ blockquote {
 }
 
 /* The Modal (background) */
-.modal {
+.custom-modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1001; /* Sit on top */
@@ -250,21 +301,21 @@ blockquote {
 }
   
 /* The Close Button */
-.close {
+.custom-close {
     color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
   
-.close:hover, .close:focus {
+.custom-close:hover, .custom-close:focus {
     color: #fefefe;
     text-decoration: none;
     cursor: pointer;
 }
 
 /* Modal Header */
-.modal-header {
+.custom-modal-header {
     padding: 2px 16px;
     background-color: #52ab98;
     color: white;
@@ -274,23 +325,24 @@ blockquote {
 }
 
 /* Modal Body */
-.modal-body {
+.custom-modal-body {
     padding: 2px 16px;
     height: 80%;
     overflow: auto;
 }
 
 /* Modal Footer */
-.modal-footer {
+.custom-modal-footer {
     padding: 2px 16px;
     background-color: #52ab98;
     color: white;
     height: 10%;
     border-radius: 0 0 10px 10px;
+    text-align: center;
 }
 
 /* Modal Content */
-.modal-content {
+.custom-modal-content {
     position: absolute;
     background-color: #fefefe;
     margin: 0 auto;

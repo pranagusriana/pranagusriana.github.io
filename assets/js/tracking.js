@@ -6,6 +6,12 @@ document.body.addEventListener("click", function(e) {
         updateSession();
         trackEvent(eventName, value);
         isUserScroll = false;
+	} else if(e.target && (e.target.parentElement.nodeName == "A" || e.target.parentElement.nodeName == "BUTTON")) {
+		const eventName = "CLICK_BUTTON";
+        const value = e.target.parentElement.id;
+        updateSession();
+        trackEvent(eventName, value);
+        isUserScroll = false;
 	}
 });
 
@@ -30,6 +36,13 @@ const possibleValues = {
 };
 
 function scrollHandler() {
+    var top = window.scrollY;
+    if(top >=100) {
+        document.getElementById("navbar").classList.add('navbarScroll');
+    }
+    else {
+        document.getElementById("navbar").classList.remove('navbarScroll');
+    }
     updateSession();
     if (isUserScroll){
         if(firstScrollTimestamp == null){

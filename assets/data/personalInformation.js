@@ -14,6 +14,14 @@ function loadPersonalInformation(listInfo){
         } else if (type == "css"){
             const textDoc = document.getElementById(id);
             textDoc.style.backgroundImage = value;
+        } else if (type == "typedtext"){
+            var typed = new Typed('#'+id, {
+                strings: value.split("<sp>"),
+                typeSpeed: 50,
+                backSpeed: 60,
+                smartBackspace: true,
+                loop: true
+            });
         }
     }
 }
